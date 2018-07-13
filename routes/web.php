@@ -23,7 +23,42 @@
 
 
 $this->get('/', 'PostsController@index');
-$this->get('/posts/{post}', 'PostsController@show');
+//$this->get('/posts/{post}', 'PostsController@show');
+$this->get('/posts/create', 'PostsController@create');
+$this->post('/posts', 'PostsController@store');
+
+
+//Basic REST
+
+//For example: posts
+
+
+//View all posts
+//GET /posts
+
+//Creating post GET
+//GET /posts/create
+
+
+//Creating posts POST(send)
+//POST /posts
+
+
+//Edit existing post GET
+//GET /posts/{id}/edit
+
+//Edit existing post PATCH/PUT
+//PATCH /posts/{id}
+
+//Show specific post GET (notice that uri is the same for patch)
+//GET /posts/{id}
+
+//Delete will be the same as POST edit
+//DELETE /posts/{id}
+
+
+
+
 //controller => PostsController, Eloquent model => Post, migration => create_posts_table
 
 $this->get('/tasks', 'TasksController@index');
