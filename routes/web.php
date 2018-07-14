@@ -26,6 +26,7 @@ $this->get('/', 'PostsController@index');
 $this->get('/posts/create', 'PostsController@create');
 $this->post('/posts', 'PostsController@store');
 $this->get('/posts/{post}', 'PostsController@show');
+$this->post('posts/{post}/comments', 'CommentsController@store');
 
 
 //Basic REST

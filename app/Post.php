@@ -13,4 +13,20 @@ class Post extends Model
     {
         return $this->hasMany(Comment::class);
     }
+
+    public function addComment($body)
+    {
+//        Comment::create([
+//
+//            'body' => $body,
+//            'post_id' => $this->id
+//
+//        ]);
+
+        //OR
+        //coments - give us a collection
+        //coments() - give us a relation
+
+        $this->comments()->create(compact('body'));
+    }
 }
