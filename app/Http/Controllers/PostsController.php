@@ -44,7 +44,7 @@ class PostsController extends Controller
             'body' => 'required|max:255'
         ]);
 
-
+        //can be also request()->all()
         Post::create(request(['title', 'body']));
 
 
