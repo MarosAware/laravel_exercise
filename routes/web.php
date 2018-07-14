@@ -21,12 +21,23 @@
 //    return view('about')->with('name', 'takbylo');
 //});
 
+$this->get('/test', 'TestsController@index');
 
-$this->get('/', 'PostsController@index');
+
+$this->get('/', 'PostsController@index')->name('home');
 $this->get('/posts/create', 'PostsController@create');
 $this->post('/posts', 'PostsController@store');
 $this->get('/posts/{post}', 'PostsController@show');
 $this->post('posts/{post}/comments', 'CommentsController@store');
+
+$this->get('/register', 'RegistrationController@create');
+$this->post('/register', 'RegistrationController@store');
+
+$this->get('/login', 'SessionsController@create')->name('login');
+$this->post('/login', 'SessionsController@store');
+
+
+$this->get('/logout', 'SessionsController@destroy');
 
 
 //Basic REST

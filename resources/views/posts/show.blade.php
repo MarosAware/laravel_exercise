@@ -9,22 +9,26 @@
 
     <hr>
 
-    <div class="comments">
-        <ul class="list-group">
+    @if($post->comments->count() > 0)
+        <div class="comments">
+            <ul class="list-group">
 
-            @foreach($post->comments as $comment)
-                <li class="list-group-item">
+                @foreach($post->comments as $comment)
+                    <li class="list-group-item">
 
-                    <strong>
-                        {{ $comment->created_at->diffForHumans() }}: &nbsp;
-                    </strong>
-                    {{ $comment->body }}
-                </li>
+                        <strong>
+                            {{ $comment->created_at->diffForHumans() }}: &nbsp;
+                        </strong>
+                        {{ $comment->body }}
+                    </li>
 
-            @endforeach
+                @endforeach
 
-        </ul>
-    </div>
+            </ul>
+        </div>
+        @else
+            <p>No one comment this post.</p>
+    @endif
 
     {{-- Add a comment --}}
 

@@ -7,6 +7,13 @@ use App\Post;
 
 class PostsController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['index', 'show']);
+    }
+
+
     public function index()
     {
         //the same as:
@@ -44,8 +51,17 @@ class PostsController extends Controller
             'body' => 'required|max:255'
         ]);
 
+        auth()->user()->publish(
+            new Post(request()->all())
+        );
+
+
         //can be also request()->all()
-        Post::create(request(['title', 'body']));
+//        Post::create([
+//            'title' => request('title'),
+//            'body' => request('body'),
+//            'user_id' => auth()->id()
+//        ]);
 
 
 
