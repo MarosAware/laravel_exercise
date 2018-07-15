@@ -21,6 +21,31 @@
 //    return view('about')->with('name', 'takbylo');
 //});
 
+
+//Those we can call enywhere:
+
+// View => view()
+// Request => request()
+// App => app()
+
+
+
+
+// Service Container
+
+
+//App::bind('App\Billing\Stripe', function() {
+//   return new App\Billing\Stripe(config('services.stripe.secret'));
+//});
+
+////or resolve() or app() or App::make()
+//$stripe = app('App\Billing\Stripe');
+//
+//dd($stripe);
+
+
+
+
 $this->get('/test', 'TestsController@index');
 
 
