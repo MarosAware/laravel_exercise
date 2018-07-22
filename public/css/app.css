@@ -159,3 +159,39 @@ h6 {
   margin-bottom: 0;
 }
 
+#flash-message {
+  z-index: 10;
+  -webkit-animation: flash-message 3s forwards;
+          animation: flash-message 3s forwards;
+}
+
+@-webkit-keyframes flash-message {
+  0% {
+    opacity: 1;
+  }
+
+  40% {
+    opacity: 0.9;
+  }
+
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+
+@keyframes flash-message {
+  0% {
+    opacity: 1;
+  }
+
+  40% {
+    opacity: 0.9;
+  }
+
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+

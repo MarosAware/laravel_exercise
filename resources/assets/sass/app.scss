@@ -145,3 +145,14 @@ h1, h2, h3, h4, h5, h6 {
 .blog-footer p:last-child {
   margin-bottom: 0;
 }
+
+#flash-message {
+  z-index: 10;
+  animation: flash-message 3s forwards;
+}
+
+@keyframes flash-message {
+  0%   {opacity: 1;}
+  40%  {opacity: 0.9;}
+  100% {opacity: 0; display:none;}
+}

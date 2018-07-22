@@ -83,6 +83,10 @@ class PostsController extends Controller
             new Post(request()->all())
         );
 
+        // Flash message
+
+        session()->flash('message', 'Your post has now been published.');
+
 
         //can be also request()->all()
 //        Post::create([
