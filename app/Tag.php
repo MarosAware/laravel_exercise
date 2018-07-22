@@ -10,4 +10,10 @@ class Tag extends Model
     {
         return $this->belongsToMany(Post::class);
     }
+
+    // It will convert default id to name as a key name
+    public function getRouteKeyName()
+    {
+        return 'name';
+    }
 }

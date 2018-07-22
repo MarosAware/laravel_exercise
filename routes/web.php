@@ -55,6 +55,8 @@ $this->post('/posts', 'PostsController@store');
 $this->get('/posts/{post}', 'PostsController@show');
 $this->post('posts/{post}/comments', 'CommentsController@store');
 
+$this->get('/posts/tags/{tag}', 'TagsController@index')->name('home');
+
 $this->get('/register', 'RegistrationController@create');
 $this->post('/register', 'RegistrationController@store');
 
